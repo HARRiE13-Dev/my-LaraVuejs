@@ -1886,7 +1886,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    console.log("--------------OK------------");
+  }
+});
 
 /***/ }),
 
@@ -37550,7 +37555,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "font-weight text-center mt-lg" }, [
-      _c("h1", [_vm._v("Show User")])
+      _c("h1", [_vm._v("Show User")]),
+      _vm._v(" "),
+      _c("h2", [_vm._v("Vue.js ")])
     ])
   }
 ]
