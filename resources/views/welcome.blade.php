@@ -16,15 +16,7 @@
         <div id="app">
             <example-component></example-component>
             <user></user>
-            
-
-
-
-
-
-
-
-
+     
         </div>
     </body>
     <script src="{{ mix('/js/app.js') }}"></script>
