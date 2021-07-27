@@ -1,4 +1,8 @@
+<?PHP
+header('Access-Control-Allow-Origin: https://api.mju.ac.th/Student/API/STUDENTe8ee4f3759cc4763a8f231965a2da6db23052020/Program/0401');
+?>
 <!DOCTYPE html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -16,6 +20,7 @@
         <div id="app">
             <example-component></example-component>
             <user></user>
+            <apimju></apimju>
      
         </div>
     </body>

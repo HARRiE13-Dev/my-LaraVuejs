@@ -9,6 +9,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('create', require('./components/Create.vue').default);
 Vue.component('user', require('./components/User.vue').default);
 Vue.component('edit', require('./components/Edit.vue').default);
+Vue.component('apimju', require('./components/Apimju.vue').default);
 
 
 
