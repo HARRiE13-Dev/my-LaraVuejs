@@ -14,7 +14,7 @@
     </head>
     <body class="antialiased">
         <div id="app">
-           <edit></edit>
+           <edit id="{!!$id!!}"></edit>
 
         </div>
     </body>

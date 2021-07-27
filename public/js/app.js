@@ -1923,11 +1923,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['id'],
   data: function data() {
     return {
       name: '',
       city: ''
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/api/users/' + this.id).then(function (Response) {
+      //console.log(Response.data);
+      var user = Response.data;
+      _this.name = user.name;
+      _this.city = user.city;
+    });
+  },
+  methods: {
+    updateUser: function updateUser() {
+      axios.put('/api/users/' + this.id, {
+        name: this.name,
+        city: this.city
+      });
+    }
   }
 });
 
@@ -2024,6 +2043,15 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('api/users').then(function (Response) {
         //console.log(Response);
         _this.users = Response.data;
+      });
+    },
+    deleteUser: function deleteUser(id, index) {
+      var _this2 = this;
+
+      //console.log(id);
+      axios["delete"]('api/users/' + id).then(function (Response) {
+        //console.log(Response);
+        _this2.users.splice(index, 1);
       });
     }
   },
@@ -37962,11 +37990,11 @@ var render = function() {
                 staticClass: "btn btn-primary",
                 on: {
                   click: function($event) {
-                    return _vm.addNewUser()
+                    return _vm.updateUser()
                   }
                 }
               },
-              [_vm._v("Save")]
+              [_vm._v("Update")]
             )
           ])
         ])
@@ -38061,7 +38089,7 @@ var render = function() {
         [
           _vm._m(0),
           _vm._v(" "),
-          _vm._l(_vm.users, function(user) {
+          _vm._l(_vm.users, function(user, index) {
             return _c("tr", { key: user.id }, [
               _c("td", [_vm._v(_vm._s(user.id) + " ")]),
               _vm._v(" "),
@@ -38080,7 +38108,21 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _vm._m(1, true)
+              _c("td", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-danger",
+                    attrs: { href: "javascript:;" },
+                    on: {
+                      click: function($event) {
+                        return _vm.deleteUser(user.id, index)
+                      }
+                    }
+                  },
+                  [_vm._v("Delete")]
+                )
+              ])
             ])
           })
         ],
@@ -38112,16 +38154,6 @@ var staticRenderFns = [
       _c("th", [_vm._v("Update")]),
       _vm._v(" "),
       _c("th", [_vm._v("Delete")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("a", { staticClass: "btn btn-danger", attrs: { href: "" } }, [
-        _vm._v("Delete")
-      ])
     ])
   }
 ]

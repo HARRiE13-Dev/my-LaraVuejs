@@ -76,7 +76,11 @@ class Usercontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user=User::find($id);
+        $user->name=$request->get('name');
+        $user->city=$request->get('city');
+        $user->update();
+        return Response()->json($user);
     }
 
     /**
@@ -87,6 +91,8 @@ class Usercontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user=User::find($id);
+        $user->delete();
+        return Response()->json($user);
     }
 }
