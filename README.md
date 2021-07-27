@@ -1,3 +1,10 @@
+Harrie Note : 
+    1. Run Xampp and Create DB Name : laraveldemo create User table id,name,city
+    2. npm run watch in Directory for see API
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
